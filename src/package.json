@@ -1,0 +1,28 @@
+{
+  "name": "ngx-rawmaterial",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jesusbarcam/ngx-rawmaterial"
+  },
+  "author": {
+    "name": "Jesus Barajas Camacho",
+    "email": "jesusbarcam@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jesusbarcam/ngx-rawmaterial/issues"
+  },
+  "main": "ngx-rawmaterial.umd.js",
+  "module": "ngx-rawmaterial.js",
+  "jsnext:main": "ngx-rawmaterial.js",
+  "typings": "ngx-rawmaterial.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
