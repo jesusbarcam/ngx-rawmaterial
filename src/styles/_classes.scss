@@ -1,0 +1,12 @@
+@import 'variables';
+@import 'mixins';
+
+/*
+@description:
+Background of all html elements
+*/
+.background-html-element {
+  border:0;
+  border-radius: $border-radius-inputs;
+  background-color: rgba($colorBackground-elements,0.08);
+}//background

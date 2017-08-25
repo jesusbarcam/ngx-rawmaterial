@@ -1,0 +1,63 @@
+@import '../../styles/_variables.scss';
+@import '../../styles/_classes.scss';
+
+$minWidth-element: 50px;
+
+
+
+
+
+:host {
+  font-family:'Open Sans';
+  font-size: 1rem;
+  font-weight: 100;
+}//host
+
+
+
+.container {
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+
+    input {
+      border:0 !important;
+      border-radius: 3px;
+      padding:0.35rem;
+      font-weight: 100;
+      font-size: 0.9rem;
+      color: #fff;
+      background-color:rgba(#fff,0.1); 
+    }//input
+
+    .buttons-wrapper {
+      max-width: 500px;
+      margin:.5rem 0rem;
+      
+      button {
+        padding:.4rem 2rem ;
+        border:0;
+        background-color: rgba(#fff,0.7);
+    
+    }//button
+
+    }//buttons-wrapper
+    
+
+  }//wrapper
+
+
+
+
+  .wrapper.vertical {
+    flex-direction: column;
+    input {
+      margin-bottom: 0.1rem;
+    }//input
+  }//wrapper.vertical
+
+
+}//container
+
+

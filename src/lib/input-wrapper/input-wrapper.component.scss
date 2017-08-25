@@ -1,0 +1,54 @@
+@import '../../styles/_variables.scss';
+@import '../../styles/_mixins.scss';
+@import '../../styles/_classes.scss';
+
+
+
+
+:host { 
+  @extend .background-html-element;
+  display: inline-block;
+  padding:8px 5px;
+  width: 100%;
+  border:1px solid;
+  border-color:transparent;
+}//host
+
+.icon {
+  width:15%;
+  text-align: center;
+  background:transparent;
+  border:none;
+  opacity: 0.6;
+}//icon
+
+
+
+:host(.input-focus) .icon {
+  color:$colorSelection;
+  opacity: 1;
+}//host.input-focus
+
+
+
+:host /deep/ input {
+  position:absolute;
+  width: 80%;
+  color:rgba(#000,0.7);
+  background-color: transparent;
+  border:none;
+  outline: none;
+}//input
+
+
+
+
+:host(.input-focus) {
+  outline:none;
+  border:1px solid $colorSelection;
+  -webkit-box-shadow: 0px 0px 3px $colorSelection;
+  box-shadow: 0px 0px 3px $colorSelection;
+}//host.input-focus
+
+
+

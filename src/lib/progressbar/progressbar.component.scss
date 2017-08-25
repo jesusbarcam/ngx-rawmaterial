@@ -1,0 +1,57 @@
+
+$backgroundWrapperDarkColor: #fff !default;
+$backgroundWrapperColor:#bbb !default;
+$progressBar-color:#07a1f7 !default;
+$progressBar-height:4px;
+
+
+
+
+:host-context(.raw-dark-theme){
+  margin:10px 0px;
+
+  .progress-bar-wrapper {
+    background-color:rgba($backgroundWrapperColor,0.2);
+  }//progress-bar-wrapper
+
+}//host-context:dark-theme
+
+
+
+
+:host {
+
+  .progress-bar-wrapper {
+    width:100%;
+    margin:8px 0px;
+    padding:1px 2px;
+    height:$progressBar-height;
+    background-color:rgba($backgroundWrapperColor,0.9);
+    border-radius:3px;
+
+    .progress-bar {
+      height: 2px;
+      background-color:$progressBar-color;
+      -webkit-transition: width 0.2s; 
+      transition: width 0.2s;    
+    }//progress-bar
+
+    .percentText {
+      position: absolute;
+      width:40px;
+      text-align: center;
+      top:-0.02em;
+      font-size: 13px;
+      font-weight: 100;
+      -webkit-transition: left 0.1s; 
+      transition: left 0.1s;
+    }
+
+
+  }//progress-bar-wrapper
+
+}//host
+
+
+
+

@@ -1,0 +1,73 @@
+
+@import '../../styles/_variables.scss';
+
+$numClasses: 15;
+
+@mixin blur-fx-styles($value) {
+  $formatValue:unquote($value + 'px');
+  -webkit-filter: blur($formatValue);
+  -moz-filter: blur($formatValue);
+  -ms-filter: blur($formatValue);
+  filter: blur($formatValue);
+}
+
+@mixin col-x-list {
+  @for $i from 1 through $numClasses {
+      .blur-#{$i}-fx { @include blur-fx-styles(#{$i}); }
+  }//for
+}//mixin
+
+@include col-x-list;
+
+
+.wrapper {
+  padding: 0px;
+  margin:0px;
+  width: 100%;
+  height: 100vh;
+  z-index:100;
+}//wallpaper-wrapper
+
+
+
+.wallpaper-mask {
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100vh;
+  width: 100%;
+  background-color: $colorDark;
+  opacity: 0;
+  z-index: 1;
+}//wallpaper-mask
+
+
+
+.transclude-menu {
+  z-index: 3 !important;
+}//transclude-menu
+
+
+
+.transclude-logo {
+  width: 100%;
+  height: 85px;
+  position: fixed;
+  z-index: 2 !important;
+  top:15%;
+
+  .logo-wrapper {
+    position: absolute;
+    left:2%;
+  }//logo-wrapper
+
+}//transclude-logo
+
+
+
+
+.transclude-logo.completed {
+  position: fixed !important;
+  top:0px !important;
+  background-color: $colorDark;
+}//wrapper.finish

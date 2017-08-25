@@ -1,0 +1,29 @@
+
+
+<div class="transclude-menu">
+  <div class="menu-wrapper">
+  
+    <ng-content select=".menu-transclusion"></ng-content>
+  
+  </div>
+</div>
+
+
+<div class="transclude-logo" [style.top]="logotypePosition" [class.completed]=" completed ">
+  <div class="logo-wrapper" [style.width]="logoWidth">
+    <!--<span [style.color]="'white'">{{ logoWidth }}</span>-->
+    <ng-content select=".logotype-transclusion"></ng-content>
+  
+  </div>
+</div>
+
+
+<div class="wrapper">
+  <div class="wallpaper-mask" [style.opacity]="maskOpacityValue" ></div>
+  
+  <div [ngClass]=" blurFXClass ">
+    <raw-wallpaper [url]=" imageUrl "></raw-wallpaper>
+  </div>
+
+</div>
+

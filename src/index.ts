@@ -1,35 +1,50 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SampleComponent } from './sample.component';
-import { SampleDirective } from './sample.directive';
-import { SamplePipe } from './sample.pipe';
-import { SampleService } from './sample.service';
 
-export * from './sample.component';
-export * from './sample.directive';
-export * from './sample.pipe';
-export * from './sample.service';
+// Components
+import { RawInputWrapperComponent } from './lib/input-wrapper/input-wrapper.component';
+import{ RawLoginComponent } from './lib/login/login.component';
+import{ RawProgressbarComponent } from './lib/progressbar/progressbar.component';
+import{ RawSplashScrollComponent } from './lib/splash-scroll/splash-scroll.component';
+import{ RawWallpaperComponent } from './lib/wallpaper/wallpaper.component';
+
+// Common libraries
+import { InputRefDirective } from './lib/common/input-ref/input-ref.directive';
+
+
+// Export library components
+export * from './lib/input-wrapper/input-wrapper.component';
+export * from './lib/login/login.component';
+export * from './lib/progressbar/progressbar.component';
+export * from './lib/common/input-ref/input-ref.directive';
+
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+    RawInputWrapperComponent,
+    RawLoginComponent,
+    RawProgressbarComponent,
+    RawSplashScrollComponent,
+    RawWallpaperComponent,
+    InputRefDirective
   ],
   exports: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+    RawInputWrapperComponent,
+    RawLoginComponent,
+    RawProgressbarComponent,
+    RawSplashScrollComponent,
+    RawWallpaperComponent,
   ]
 })
-export class SampleModule {
+
+export class RawMaterialModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: SampleModule,
-      providers: [SampleService]
-    };
-  }
-}
+      ngModule: RawMaterialModule,
+      providers: [] // Aquí añadimos los servicios del modulo!
+    }; // Return
+  } // ForRoot
+}// RawMaterialModule
