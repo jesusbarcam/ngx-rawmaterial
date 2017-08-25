@@ -19,7 +19,6 @@ export class RawLoginComponent implements OnInit {
   }// constructor
 
 
-
   /**
    * @implements
    * @method
@@ -28,5 +27,4 @@ export class RawLoginComponent implements OnInit {
   ngOnInit() {
   }// ngOnInit
 
-  
 }// RawLoginComponent

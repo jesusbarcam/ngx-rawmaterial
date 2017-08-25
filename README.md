@@ -1,5 +1,7 @@
 # ngx-rawmaterial
 
+**IMPORTANT! Consider, that this component library is still in development fase.**
+
 ## Installation
 
 To install this library, run:
@@ -8,24 +10,21 @@ To install this library, run:
 $ npm install ngx-rawmaterial --save
 ```
 
-## Consuming your library
+## To consuming this library
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
-
-```bash
-$ npm install ngx-rawmaterial
-```
-
-and then from your Angular `AppModule`:
+Once you have the library installed, you can import in any Angular application.
 
 ```typescript
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import your library
-import { SampleModule } from 'ngx-rawmaterial';
+
+// Import this library
+import { RawMaterialModule } from 'ngx-rawmaterial';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +33,7 @@ import { SampleModule } from 'ngx-rawmaterial';
   imports: [
     BrowserModule,
 
-    // Specify your library as an import
+    // Specify this library as an import
     LibraryModule
   ],
   providers: [],
@@ -43,28 +42,14 @@ import { SampleModule } from 'ngx-rawmaterial';
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once this library is imported, you can use its components, directives and pipes in your Angular application:
 
 ```xml
-<!-- You can now use your library component in app.component.html -->
+<!-- You can now use ngx-rawmaterial library component for instance in app.component.html -->
 <h1>
   {{title}}
 </h1>
-<sampleComponent></sampleComponent>
-```
-
-## Development
-
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
-```
-
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
+<raw-login></raw-login>
 ```
 
 ## License

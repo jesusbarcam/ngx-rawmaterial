@@ -9,7 +9,7 @@ import { Component, OnInit, Input, HostListener } from '@angular/core';
 
 
 @Component({
-  selector: 'splash-scroll',
+  selector: 'raw-splash-scroll',
   templateUrl: './splash-scroll.component.html',
   styleUrls: ['./splash-scroll.component.scss']
 })
