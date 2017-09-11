@@ -1,0 +1,113 @@
+$infoColor: #77B7D7 !default;
+$warningColor: #EACB64 !default;
+$errorColor: #ab1a10 !default;
+$successColor: #17a729 !default;
+
+
+$infoColorText:darken($infoColor,15);
+$warningColorText:darken($warningColor,20);
+$errorColorText: darken($errorColor,15);
+$successColorText: darken($successColor,15);
+
+
+
+.system-message {
+  @include lightShadow();
+  border-radius: 3px;
+}//system-message
+
+
+.container {
+  width: 100%;
+  display:table-row;
+  opacity: 1 !important;
+
+
+  .icon-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    padding:5px;
+    width:20%;
+    left: 0;
+    border-right: 1px solid;
+    
+    .icon {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      
+      i {
+        font-size: 4.5rem;
+        text-align: center;
+      }//i
+    }//icon
+
+  }//icon-message
+
+
+
+  .message-wrapper {
+    display: table-cell;
+    text-align: left !important;
+    padding:15px !important;
+    width:80%;
+    
+    p {
+      margin-bottom:0px !important;
+    }//p
+
+  }//message-wrapper
+
+  .summary {
+    font-size: 1.1rem !important;
+  }//summary
+
+  .details {
+    font-size: 0.85rem !important;
+  }//details
+
+}//system-message
+
+
+.system-message.info {
+  background-color:lighten($infoColor,20) !important;
+  color:$infoColorText;
+
+  .icon-wrapper {
+    border-right-color: rgba($infoColorText,0.2);
+  }//icon-wrapper
+}//system-message.info
+
+.system-message.warning {
+  background-color:lighten($warningColor,20) !important;
+  color:$warningColorText;
+
+  .icon-wrapper {
+    border-right-color: rgba($warningColorText,0.2);
+  }//icon-wrapper
+}//system-message.warning
+
+.system-message.error {
+  background-color:lighten($errorColor,30) !important;
+  color:$errorColorText;
+
+  .icon-wrapper {
+    border-right-color: rgba($errorColorText,0.2);
+  }//icon-wrapper
+}//system-message.error
+
+
+.system-message.success {
+  background-color: lighten($successColor,30) !important;
+  color:$successColorText;
+
+  .icon-wrapper {
+    border-right-color: rgba($successColorText,0.2);
+  }//icon-wrapper
+}

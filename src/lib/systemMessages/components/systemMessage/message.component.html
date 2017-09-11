@@ -1,0 +1,19 @@
+<div class="system-message {{ kind }} animated fadeInDown" (clickOutside)="deleteMessage()" [class.fadeOutUp]="fadeOut" *ngIf="!destroyMessage" >
+  <div class="container" >
+
+    <div class="icon-wrapper">
+      <div class="icon">
+        <i [hidden]="kind !== DEFAULT_INFO_KIND" class="fa fa-info-circle"></i>
+        <i [hidden]="kind !== DEFAULT_WARNING_KIND" class="fa fa-warning"></i>
+        <i [hidden]="kind !== DEFAULT_ERROR_KIND" class="fa fa-exclamation-circle"></i>
+        <i [hidden]="kind !== DEFAULT_SUCCESS_KIND" class="fa fa-check-circle-o"></i>
+      </div>
+    </div>
+
+  <div class="message-wrapper">
+    <h3 class="summary"><b>{{ summary }}</b></h3>
+    <p class="details">{{ details }} </p>
+  </div>
+
+  </div>  
+</div>

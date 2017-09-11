@@ -1,0 +1,10 @@
+<div class="system-messages-screen">
+
+  <div class="system-messages-wrapper" *ngIf="displayMessage" >
+    <system-message [kind]=" kindOfMessage "
+                    [summary]=" summary "
+                    [details]=" details ">         
+    </system-message>
+  </div>
+
+</div>
