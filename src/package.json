@@ -1,12 +1,12 @@
 {
   "name": "ngx-rawmaterial",
-  "version": "0.1.0",
+  "version": "0.1.12",
   "repository": {
     "type": "git",
     "url": "https://github.com/jesusbarcam/ngx-rawmaterial"
   },
   "author": {
-    "name": "Jesus Barajas Camacho",
+    "name": "jesusbarcam",
     "email": "jesusbarcam@gmail.com"
   },
   "keywords": [

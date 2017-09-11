@@ -1,6 +1,6 @@
 {
   "name": "ngx-rawmaterial",
-  "version": "0.1.2",
+  "version": "0.1.12",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -16,7 +16,7 @@
     "url": "https://github.com/jesusbarcam/ngx-rawmaterial"
   },
   "author": {
-    "name": "Jesus Barajas Camacho",
+    "name": "jesusbarcam",
     "email": "jesusbarcam@gmail.com"
   },
   "keywords": [
