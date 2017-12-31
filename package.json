@@ -27,6 +27,7 @@
     "url": "https://github.com/jesusbarcam/ngx-rawmaterial/issues"
   },
   "devDependencies": {
+    "@angular/cli": "^1.4.1",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/compiler-cli": "^4.0.0",

@@ -1,24 +1,23 @@
-import{ Component, OnInit, Input, Output, OnDestroy, ViewContainerRef, ViewChild } from '@angular/core';
-import{ Subscription } from 'rxjs';
+import { Component, OnInit, Input, Output, OnDestroy, ViewContainerRef, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
 
-import{ SystemDialogService } from './systemDialog.service';
+import { SystemModalService } from './system-modal.service';
 
 
 type StatesOfDialog =  'startShow' | 'startHide' | 'wait'  ;
 
 
 @Component({
-  selector:'system-dialog',
-  template: require('./systemDialog.component.html'),
-  styles:[require('./systemDialog.component.scss')]
+  selector: 'system-modal',
+  templateUrl: './system-modal.component.html',
+  styleUrls: [ './system-modal.component.scss' ]
 })// Component
 
 
 
 
-export class SystemDialogComponent implements OnInit, OnDestroy {
+export class SystemModalComponent implements OnInit, OnDestroy {
 
-  
 
   private visible: boolean;
   private backmaskState: StatesOfDialog;
@@ -27,8 +26,8 @@ export class SystemDialogComponent implements OnInit, OnDestroy {
 
 
 
-  @ViewChild('dynamicContent', {read: ViewContainerRef }) 
-  private viewContainerRef: ViewContainerRef
+  @ViewChild('dynamicContent', {read: ViewContainerRef })
+  private viewContainerRef: ViewContainerRef;
 
 
 
@@ -36,12 +35,12 @@ export class SystemDialogComponent implements OnInit, OnDestroy {
    * @method
    * @constructor
    */
-  constructor(private systemDialogService: SystemDialogService) {
+  constructor(private modalService: SystemModalService) {
     this.visible = false;
     this.backmaskState = 'wait';
     this.dialogState = 'wait';
   }// Constructor
-    
+
 
 
 
@@ -75,8 +74,8 @@ export class SystemDialogComponent implements OnInit, OnDestroy {
    * @description
    */
   private inicializeSubscriptions() {
-    this.subscription = this.systemDialogService.visible$
-    .subscribe((newDialogState:boolean) => {
+    this.subscription = this.modalService.visible$
+    .subscribe((newDialogState: boolean) => {
       
       // Manejamos la visibilidad según el 
       // nuevo estado que se solicite que adopte
@@ -99,7 +98,7 @@ export class SystemDialogComponent implements OnInit, OnDestroy {
    *  
    */
   private handlerForVisibility( newState: boolean ) {
-    if( newState ) {
+    if ( newState ) {
       return this.initProgressOfShowComponent();
     }// If
     this.initProgressOfHideComponent();
@@ -117,20 +116,21 @@ export class SystemDialogComponent implements OnInit, OnDestroy {
    * el componente 
    */
   private initProgressOfHideComponent() {
-    if( this.visible ) {
+    if ( this.visible ) {
       
       this.dialogState = 'startHide';
       
-      setTimeout(()=>{
+      setTimeout(() => {
         this.backmaskState = 'startHide';
-      },200);
+      }, 200);
 
 
-      setTimeout(()=>{
+      setTimeout(() => {
         this.visible = false;
         this.dialogState = 'wait';
         this.backmaskState = 'wait';
-      },1000);
+      }, 1000);
+
       
     }// If
   }// InitProgressOfHideComponent
@@ -146,14 +146,14 @@ export class SystemDialogComponent implements OnInit, OnDestroy {
    * componente en la vista donde este insertado.
    */
   private initProgressOfShowComponent() {
-    if( !this.visible ) {
+    if ( !this.visible ) {
 
       this.visible = true;
       this.backmaskState = 'startShow';
 
       setTimeout(() => {
         this.dialogState = 'startShow';
-      },200);
+      }, 200);
       
     }// If
   }// InitProgressOfShowComponent
@@ -201,7 +201,7 @@ export class SystemDialogComponent implements OnInit, OnDestroy {
    * los componentes que se relacionan con este componente.
    */
   private closeDialog() {
-    this.systemDialogService.close();
+    this.modalService.close();
   }// CloseDialog
 
 

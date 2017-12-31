@@ -5,7 +5,7 @@ import{ Observable, BehaviorSubject } from 'rxjs';
 
 
 @Injectable()
-export class SystemDialogService {
+export class SystemModalService {
 
 
 
@@ -67,4 +67,4 @@ export class SystemDialogService {
 
 
 
-}// SystemDialogService
+}// SystemModalService
